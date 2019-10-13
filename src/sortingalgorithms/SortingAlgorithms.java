@@ -5,7 +5,7 @@
  */
 package sortingalgorithms;
 
-import algorithms.BubbleSort;
+import generator.Structures;
 import generator.Generator;
 import java.io.IOException;
 
@@ -21,7 +21,7 @@ public class SortingAlgorithms {
     public static void main(String[] args) throws IOException {
         Generator generator = new Generator();
         generator.generateNumbers();
-        //BubbleSort bubble = new BubbleSort(10,10);
+        //BubbleSort bubble = new Structures(10,10);
         //bubble.readTextFile();
     }
     
