@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package sortingalgorithms;
-
-import generator.Structures;
 import generator.Generator;
 import java.io.IOException;
 
@@ -19,8 +17,8 @@ public class SortingAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        Generator generator = new Generator();
-        generator.generateNumbers();
+        //Generator generator = new Generator();
+        //generator.generateNumbers();
         //BubbleSort bubble = new Structures(10,10);
         //bubble.readTextFile();
     }

@@ -16,18 +16,18 @@ import java.util.Stack;
  * @author Oscar Neiva
  */
 public class Structures {
-    public static int[][] array;
-    public static LinkedList<Integer> linkedlist;
-    public static Queue<Integer> queue;
-    public static Stack<Integer> stack;
+    private int[][] array;
+    private LinkedList<Integer> linkedlist;
+    private Queue<Integer> queue;
+    private Stack<Integer> stack;
     private String[] fileData;
     
     // Class constructor.
     public Structures(int x, int y){
         array = new int[x][y];
-        linkedlist = new LinkedList<Integer>();
-        queue = new LinkedList<Integer>();
-        stack = new Stack<Integer>();
+        linkedlist = new LinkedList<>();
+        queue = new LinkedList<>();
+        stack = new Stack<>();
     } 
     
     // Read the data from the text file.
@@ -41,11 +41,12 @@ public class Structures {
             fileData = fileContent.split(","); 
         }
         
+        System.out.println("Text file read.");
         fileReader.close();
     }
     
     // Method to fill the array.
-    public void fillArray(){
+    public int[][] fillArray(){
         int k = 0;
         for(int i=0; i<1000; i++){
             for(int j=0; j<1000; j++){
@@ -54,29 +55,33 @@ public class Structures {
             }
         }
         System.out.println("Array filled!");
+        return array;
     }
     
     // Method to fill the linked list.
-    public void fillList(){
+    public LinkedList<Integer> fillList(){
         for(int i=0; i<1000000; i++){
             linkedlist.add(Integer.valueOf(fileData[i]));
         }
         System.out.println("List filled!");
+        return linkedlist;
     }
     
     // Method to fill the queue.
-    public void fillQueue(){
+    public Queue<Integer> fillQueue(){
         for(int i=0; i<1000000; i++){
             queue.add(Integer.valueOf(fileData[i]));
         }
         System.out.println("Queue filled!");
+        return queue;
     }
     
     // Method to fill the stack.
-    public void fillStack(){
+    public Stack<Integer> fillStack(){
         for(int i=0; i<1000000; i++){
             stack.add(Integer.valueOf(fileData[i]));
         }
         System.out.println("Stack filled!");
+        return stack;
     }
 }
