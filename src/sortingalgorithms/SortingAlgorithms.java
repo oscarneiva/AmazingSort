@@ -6,6 +6,7 @@
 package sortingalgorithms;
 
 import algorithms.BubbleSort;
+import generator.Generator;
 import java.io.IOException;
 
 /**
@@ -18,8 +19,10 @@ public class SortingAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        BubbleSort bubble = new BubbleSort(10,10);
-        bubble.readTextFile();
+        Generator generator = new Generator();
+        generator.generateNumbers();
+        //BubbleSort bubble = new BubbleSort(10,10);
+        //bubble.readTextFile();
     }
     
 }

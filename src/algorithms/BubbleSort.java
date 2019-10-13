@@ -21,6 +21,7 @@ public class BubbleSort {
     private Queue<Integer> queue;
     private Stack<String> stackOfCards;
     
+    // Class constructor.
     public BubbleSort(int x, int y){
         array = new int[x][y];
         linkedlist = new LinkedList<Integer>();
@@ -28,6 +29,7 @@ public class BubbleSort {
         stackOfCards = new Stack<>();
     } 
     
+    // Read the data from the text file.
     public void readTextFile() throws IOException{
         FileReader fileReader = new FileReader("./data/data.csv");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
