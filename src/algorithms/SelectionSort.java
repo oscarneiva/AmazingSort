@@ -10,5 +10,11 @@ package algorithms;
  * @author Oscar Neiva
  */
 public class SelectionSort {
+    public SelectionSort(){
     
+    }
+    
+    public void runSelectionSort(){
+    
+    }
 }

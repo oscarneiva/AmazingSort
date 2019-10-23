@@ -10,5 +10,11 @@ package algorithms;
  * @author Oscar Neiva
  */
 public class MergeSort {
+    public MergeSort(){
     
+    }
+    
+    public void MergeSort(){
+    
+    }
 }

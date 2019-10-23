@@ -10,5 +10,11 @@ package algorithms;
  * @author Oscar Neiva
  */
 public class QuickSort {
+    public QuickSort(){
     
+    }
+    
+    public void runQuickSort(){
+    
+    }
 }
