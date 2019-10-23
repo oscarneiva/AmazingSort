@@ -21,8 +21,9 @@ public class SortingAlgorithms {
     public static void main(String[] args) throws IOException, InterruptedException {
         
         System.out.println("|----------------------------------------------|");
-        System.out.println("| /(ºoº)/ Welcome to the amazing sort! /(ºoº)/ |");
-        System.out.println("| 0 - To generate 1,000,000 random numbers.    |");
+        System.out.println("|         Welcome to the amazing sort!         |");
+        System.out.println("|----------------------------------------------|");
+        System.out.println("| 0 - To generate random numbers.              |");
         System.out.println("| 1 - To sort the numbers using bubble sort.   |");
         System.out.println("| 2 - To sort the numbers using insertion sort.|");
         System.out.println("| 3 - To sort the numbers using merge sort.    |");
