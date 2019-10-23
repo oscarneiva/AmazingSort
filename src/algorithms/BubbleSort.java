@@ -14,37 +14,40 @@ import java.util.Stack;
  */
 public class BubbleSort {
     
-    // Class constructor.
+    // Class constructor
     public BubbleSort(){
     
     }
     
     // Sorts the array
-    public void sort(int[] arr){
-        int n = arr.length; 
+    public void sort(int[] array){
+        System.out.println("Array sorting...");
+        int n = array.length; 
         for (int i = 0; i < n-1; i++){
             for (int j = 0; j < n-i-1; j++){
-                if (arr[j] > arr[j+1]){ 
-                    int temp = arr[j]; 
-                    arr[j] = arr[j+1]; 
-                    arr[j+1] = temp;
+                if (array[j] > array[j+1]){ 
+                    int temp = array[j]; 
+                    array[j] = array[j+1]; 
+                    array[j+1] = temp;
                 } 
             }      
         }
-        printArray(arr);
+        System.out.println("Array Sorted!");
+        //printArray(array);
     }
     
     // Prints the array
-    void printArray(int arr[]){ 
+    void printArray(int array[]){ 
         System.out.println("Printing the array... ");
-        int n = arr.length; 
+        int n = array.length; 
         for (int i=0; i<n; i++) 
-            System.out.print(arr[i] + " "); 
+            System.out.print(array[i] + " "); 
         System.out.println(); 
     } 
     
     // Sorts the list
     public void sort(LinkedList<Integer> list){
+        System.out.println("List sorting...");
         int n = list.size();
         for (int i = 0; i < n-1; i++){
             for (int j = 0; j < n-i-1; j++){
@@ -55,7 +58,8 @@ public class BubbleSort {
                 } 
             }      
         }
-        printList(list);
+        System.out.println("List Sorted!");
+        //printList(list);
     }
     
     // Prints the list
@@ -69,6 +73,7 @@ public class BubbleSort {
     
     // Sorts the stack
     public void sort(Stack<Integer> stack){
+        System.out.println("Stack sorting... ");
         int n = stack.size();
         for (int i = 0; i < n-1; i++){
             for (int j = 0; j < n-i-1; j++){
@@ -79,7 +84,8 @@ public class BubbleSort {
                 } 
             }      
         }
-        printList(stack);
+        System.out.println("Stack Sorted!");
+        //printList(stack);
     }
     
     // Prints the stack

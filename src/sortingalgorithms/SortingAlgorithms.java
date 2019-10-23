@@ -5,6 +5,7 @@
  */
 package sortingalgorithms;
 import algorithms.BubbleSort;
+import algorithms.SelectionSort;
 import generator.Generator;
 import generator.Structures;
 import java.io.IOException;
@@ -56,6 +57,9 @@ public class SortingAlgorithms {
                 System.out.println("Insertion sort selected... ");
                 System.out.print("How many elements: ");
                 number = scanner.nextInt();
+                
+                SelectionSort selectionsort = new SelectionSort();
+                selectionsort.sort(structures.fillArray(number));
             break;
             case 3:
                 System.out.println("Merge sort selected... ");

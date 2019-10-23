@@ -5,34 +5,79 @@
  */
 package algorithms;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author Oscar Neiva
  */
 public class SelectionSort {
     
-    // Class constructor.
+    // Class constructor
     public SelectionSort(){
     
     }
     
-    public void sort(int arr[]){
-        int n = arr.length; 
+    // Sorts the array
+    public void sort(int array[]){
+        System.out.println("Sorting the array...");
+        int n = array.length; 
   
-        // One by one move boundary of unsorted subarray 
-        for (int i = 0; i < n-1; i++) 
-        { 
-            // Find the minimum element in unsorted array 
+        for (int i = 0; i < n-1; i++){ 
             int min_idx = i; 
-            for (int j = i+1; j < n; j++) 
-                if (arr[j] < arr[min_idx]) 
+            for (int j = i+1; j < n; j++){
+                if (array[j] < array[min_idx]){
                     min_idx = j; 
-  
-            // Swap the found minimum element with the first 
-            // element 
-            int temp = arr[min_idx]; 
-            arr[min_idx] = arr[i]; 
-            arr[i] = temp; 
+                }
+            }
+            
+            int temp = array[min_idx]; 
+            array[min_idx] = array[i]; 
+            array[i] = temp; 
         }
+        
+        System.out.println("Array sorted!");
+        printArray(array);
     }
+    
+    // Prints the array 
+    void printArray(int array[]){ 
+        int n = array.length; 
+        for (int i=0; i<n; ++i){
+            System.out.print(array[i]+" ");
+        } 
+        System.out.println(); 
+    }
+    
+    // Sorts the list
+    public void sort(LinkedList<Integer> list){
+        System.out.println("Sorting the list...");
+        int n = list.size(); 
+  
+        for (int i = 0; i < n-1; i++){ 
+            int min_idx = i; 
+            for (int j = i+1; j < n; j++){
+                if (list.get(j) < list.get(min_idx)){
+                    min_idx = j; 
+                }
+            }
+            
+            int temp = list.get(min_idx); 
+            list.set(min_idx, list.get(i)); 
+            list.set(i, temp); 
+        }
+        
+        System.out.println("List sorted!");
+        printArray(list);
+    }
+    
+    // Prints the list
+    void printArray(LinkedList<Integer> list){ 
+        int n = list.size();
+        for (int i=0; i<n; ++i){
+            System.out.print(list.get(i)+" ");
+        } 
+        System.out.println(); 
+    }
+    
 }
