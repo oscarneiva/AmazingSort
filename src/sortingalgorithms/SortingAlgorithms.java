@@ -43,7 +43,6 @@ public class SortingAlgorithms {
                 System.out.println("Bubble sort selected... ");
                 System.out.print("How many elements: ");
                 number = scanner.nextInt();
-                Structures structures = new Structures(number);
             break;
             case 2:
                 System.out.println("Insertion sort selected... ");

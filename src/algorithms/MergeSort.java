@@ -10,11 +10,13 @@ package algorithms;
  * @author Oscar Neiva
  */
 public class MergeSort {
+    
+    // Class constructor.
     public MergeSort(){
     
     }
     
-    public void MergeSort(){
+    public void runMergeSort(){
     
     }
 }

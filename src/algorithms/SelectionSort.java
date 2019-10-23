@@ -10,6 +10,8 @@ package algorithms;
  * @author Oscar Neiva
  */
 public class SelectionSort {
+    
+    // Class constructor.
     public SelectionSort(){
     
     }

@@ -11,4 +11,12 @@ package algorithms;
  */
 public class InsertionSort {
     
+    // Class constructor.
+    public InsertionSort(){
+    
+    }
+    
+    public void runInsertionSort(){
+    
+    }
 }

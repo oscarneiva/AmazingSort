@@ -11,4 +11,12 @@ package algorithms;
  */
 public class BubbleSort {
     
+    // Class constructor.
+    public BubbleSort(){
+    
+    }
+    
+    public void runBubbleSort(){
+    
+    }
 }
