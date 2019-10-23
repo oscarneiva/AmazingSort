@@ -23,12 +23,7 @@ public class Structures {
     private String[] fileData;
     
     // Class constructor.
-    public Structures(int x) throws IOException{
-        array = new int[x];
-        linkedlist = new LinkedList<>();
-        queue = new LinkedList<>();
-        stack = new Stack<>();
-        
+    public Structures() throws IOException{
         readTextFile();
     } 
     
@@ -51,7 +46,10 @@ public class Structures {
     // Method to fill the array.
     public int[] fillArray(int number){
         System.out.println("Starting array filling...");
-        for(int i=0; i<Math.sqrt(number); i++){
+        
+        array = new int[number];
+        
+        for(int i=0; i<number; i++){
             array[i] = Integer.valueOf(fileData[i]);
         }
         System.out.println("Array filled!");
@@ -61,6 +59,9 @@ public class Structures {
     // Method to fill the linked list.
     public LinkedList<Integer> fillList(int number){
         System.out.println("Starting list filling...");
+        
+        linkedlist = new LinkedList<>();
+        
         for(int i=0; i<number; i++){
             linkedlist.add(Integer.valueOf(fileData[i]));
         }
@@ -71,6 +72,9 @@ public class Structures {
     // Method to fill the queue.
     public Queue<Integer> fillQueue(int number){
         System.out.println("Starting queue filling...");
+        
+        queue = new LinkedList<>();
+        
         for(int i=0; i<number; i++){
             queue.add(Integer.valueOf(fileData[i]));
         }
@@ -81,6 +85,9 @@ public class Structures {
     // Method to fill the stack.
     public Stack<Integer> fillStack(int number){
         System.out.println("Starting stack filling...");
+        
+        stack = new Stack<>();
+        
         for(int i=0; i<number; i++){
             stack.add(Integer.valueOf(fileData[i]));
         }

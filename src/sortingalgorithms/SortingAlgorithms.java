@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package sortingalgorithms;
+import algorithms.BubbleSort;
 import generator.Generator;
 import generator.Structures;
 import java.io.IOException;
@@ -29,6 +30,7 @@ public class SortingAlgorithms {
         System.out.println("| 5 - To sort the numbers using selection sort.|");
         System.out.println("|----------------------------------------------|");
         
+        Structures structures = new Structures();
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         int number;
@@ -43,6 +45,11 @@ public class SortingAlgorithms {
                 System.out.println("Bubble sort selected... ");
                 System.out.print("How many elements: ");
                 number = scanner.nextInt();
+                
+                BubbleSort bubblesort = new BubbleSort();
+                bubblesort.sort(structures.fillArray(number));
+                bubblesort.sort(structures.fillList(number));
+                bubblesort.sort(structures.fillStack(number));
             break;
             case 2:
                 System.out.println("Insertion sort selected... ");
