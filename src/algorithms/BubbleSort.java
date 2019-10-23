@@ -6,7 +6,6 @@
 package algorithms;
 
 import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -39,7 +38,7 @@ public class BubbleSort {
     void printArray(int arr[]){ 
         System.out.println("Printing the array... ");
         int n = arr.length; 
-        for (int i=0; i<n; ++i) 
+        for (int i=0; i<n; i++) 
             System.out.print(arr[i] + " "); 
         System.out.println(); 
     } 
@@ -49,10 +48,10 @@ public class BubbleSort {
         int n = list.size();
         for (int i = 0; i < n-1; i++){
             for (int j = 0; j < n-i-1; j++){
-                if (list.get(j) > list.get(j+1)){ 
+                if (list.get(i) > list.get(j+1)){ 
                     int temp = list.get(j); 
                     list.set(j, list.get(j+1));
-                    list.set(j+1, list.get(temp));
+                    list.set(j+1, temp);
                 } 
             }      
         }
@@ -63,7 +62,7 @@ public class BubbleSort {
     void printList(LinkedList<Integer> list){ 
         System.out.println("Printing the list... ");
         int n = list.size();
-        for (int i=0; i<n; ++i) 
+        for (int i=0; i<n; i++) 
             System.out.print(list.get(i) + " "); 
         System.out.println(); 
     } 
@@ -76,7 +75,7 @@ public class BubbleSort {
                 if (stack.get(j) > stack.get(j+1)){ 
                     int temp = stack.get(j); 
                     stack.set(j, stack.get(j+1));
-                    stack.set(j+1, stack.get(temp));
+                    stack.set(j+1, temp);
                 } 
             }      
         }
