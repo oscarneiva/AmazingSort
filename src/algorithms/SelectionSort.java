@@ -6,6 +6,7 @@
 package algorithms;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  *
@@ -68,11 +69,11 @@ public class SelectionSort {
         }
         
         System.out.println("List sorted!");
-        printArray(list);
+        printList(list);
     }
     
     // Prints the list
-    void printArray(LinkedList<Integer> list){ 
+    void printList(LinkedList<Integer> list){ 
         int n = list.size();
         for (int i=0; i<n; ++i){
             System.out.print(list.get(i)+" ");
@@ -80,4 +81,34 @@ public class SelectionSort {
         System.out.println(); 
     }
     
+    // Sorts the stack
+    public void sort(Stack<Integer> stack){
+        System.out.println("Sorting the stack...");
+        int n = stack.size(); 
+  
+        for (int i = 0; i < n-1; i++){ 
+            int min_idx = i; 
+            for (int j = i+1; j < n; j++){
+                if (stack.get(j) < stack.get(min_idx)){
+                    min_idx = j; 
+                }
+            }
+            
+            int temp = stack.get(min_idx); 
+            stack.set(min_idx, stack.get(i)); 
+            stack.set(i, temp); 
+        }
+        
+        System.out.println("Stack sorted!");
+        printStack(stack);
+    }
+    
+    // Prints the stack
+    void printStack(Stack<Integer> stack){ 
+        int n = stack.size();
+        for (int i=0; i<n; ++i){
+            System.out.print(stack.get(i)+" ");
+        } 
+        System.out.println(); 
+    }
 }

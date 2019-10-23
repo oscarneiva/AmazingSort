@@ -26,10 +26,10 @@ public class SortingAlgorithms {
         System.out.println("|----------------------------------------------|");
         System.out.println("| 0 - To generate random numbers.              |");
         System.out.println("| 1 - To sort the numbers using bubble sort.   |");
-        System.out.println("| 2 - To sort the numbers using insertion sort.|");
+        System.out.println("| 2 - To sort the numbers using selection sort.|");
         System.out.println("| 3 - To sort the numbers using merge sort.    |");
         System.out.println("| 4 - To sort the numbers using quick sort.    |");
-        System.out.println("| 5 - To sort the numbers using selection sort.|");
+        System.out.println("| 5 - To sort the numbers using insertion sort.|");
         System.out.println("|----------------------------------------------|");
         
         Structures structures = new Structures();
@@ -54,12 +54,14 @@ public class SortingAlgorithms {
                 bubblesort.sort(structures.fillStack(number));
             break;
             case 2:
-                System.out.println("Insertion sort selected... ");
+                System.out.println("Selection sort selected... ");
                 System.out.print("How many elements: ");
                 number = scanner.nextInt();
                 
                 SelectionSort selectionsort = new SelectionSort();
                 selectionsort.sort(structures.fillArray(number));
+                selectionsort.sort(structures.fillList(number));
+                selectionsort.sort(structures.fillStack(number));
             break;
             case 3:
                 System.out.println("Merge sort selected... ");
@@ -74,7 +76,7 @@ public class SortingAlgorithms {
                 
             break;
             case 5:
-                System.out.println("Selection sort selected... ");
+                System.out.println("Insertion sort selected... ");
                 System.out.print("How many elements: ");
                 number = scanner.nextInt();
                 
