@@ -6,6 +6,7 @@
 package algorithms;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  *
@@ -19,16 +20,21 @@ public class MergeSort {
     }
     
     // Sorts the array
-    public void sort(int array[], int l, int r){ 
+    public void sort(int array[], int l, int r){
         System.out.println("Sorting the array...");
-        if (l < r){
-            int m = (l+r)/2;
-            sort(array, l, m); 
-            sort(array , m+1, r); 
-            merge(array, l, m, r); 
-        }     
+        sorting(array, l, r);
         System.out.println("Array sorted!");
         printArray(array);
+    }
+    
+    // Sorting the array
+    public void sorting(int array[], int l, int r){ 
+        if (l < r){
+            int m = (l+r)/2;
+            sorting(array, l, m); 
+            sorting(array , m+1, r); 
+            merge(array, l, m, r); 
+        }     
     } 
     
     // Merges two subarrays 
@@ -84,17 +90,21 @@ public class MergeSort {
     } 
     
     // Sorts the list
-    public void sort(LinkedList<Integer> list, int l, int r){ 
+    public void sort(LinkedList<Integer> list, int l, int r){
         System.out.println("Sorting the list...");
-        if (l < r){
-            int m = (l+r)/2;
-            sort(list, l, m); 
-            sort(list, m+1, r);
-            merge(list, l, m, r); 
-        }     
-        
+        sorting(list, l, r);
         System.out.println("List sorted!");
         printList(list);
+    }
+    
+    // Sorting the list
+    public void sorting(LinkedList<Integer> list, int l, int r){ 
+        if (l < r){
+            int m = (l+r)/2;
+            sorting(list, l, m); 
+            sorting(list, m+1, r);
+            merge(list, l, m, r); 
+        }     
     } 
     
     // Merges two sublists
@@ -145,6 +155,76 @@ public class MergeSort {
         int n = list.size(); 
         for (int i=0; i<n; i++){
             System.out.print(list.get(i) + " "); 
+        }   
+        System.out.println(); 
+    } 
+    
+    // Sorts the stack
+    public void sort(Stack<Integer> stack, int l, int r){
+        System.out.println("Sorting the stack...");
+        sorting(stack, l, r);
+        System.out.println("Stack sorted!");
+        printStack(stack);
+    }
+    
+    // Sorting the stack
+    public void sorting(Stack<Integer> stack, int l, int r){ 
+        if (l < r){
+            int m = (l+r)/2;
+            sorting(stack, l, m); 
+            sorting(stack, m+1, r);
+            merge(stack, l, m, r); 
+        }     
+    } 
+    
+    // Merges two substacks
+    public void merge(Stack<Integer> stack, int l, int m, int r){
+        int n1 = m - l + 1;
+        int n2 = r - m;
+  
+        int L[] = new int [n1]; 
+        int R[] = new int [n2]; 
+  
+        for (int i=0; i<n1; i++){
+            L[i] = stack.get(l+i); 
+        } 
+            
+        for (int j=0; j<n2; j++){
+            R[j] = stack.get(m + 1 + j);
+        }
+            
+        int i = 0, j = 0;
+  
+        int k = l; 
+        while(i < n1 && j < n2){ 
+            if (L[i] <= R[j]){ 
+                stack.set(k, L[i]); 
+                i++; 
+            }else{ 
+                stack.set(k, R[j]); 
+                j++; 
+            } 
+            k++; 
+        } 
+ 
+        while(i < n1){ 
+            stack.set(k, L[i]); 
+            i++; 
+            k++; 
+        } 
+  
+        while(j < n2){ 
+            stack.set(k, R[j]);
+            j++; 
+            k++; 
+        } 
+    } 
+  
+    // Prints the stack
+    public void printStack(Stack<Integer> stack){ 
+        int n = stack.size(); 
+        for (int i=0; i<n; i++){
+            System.out.print(stack.get(i) + " "); 
         }   
         System.out.println(); 
     } 
