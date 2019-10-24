@@ -5,6 +5,9 @@
  */
 package algorithms;
 
+import java.util.LinkedList;
+import java.util.Stack;
+
 /**
  *
  * @author Oscar Neiva
@@ -16,43 +19,135 @@ public class QuickSort {
     
     }
     
-    public void sort(int arr[], int low, int high){
-        if (low < high) 
-        { 
-            /* pi is partitioning index, arr[pi] is  
-              now at right place */
-            int pi = partition(arr, low, high); 
-  
-            // Recursively sort elements before 
-            // partition and after partition 
-            sort(arr, low, pi-1); 
-            sort(arr, pi+1, high); 
+    // Sorts the array.
+    public void sort(int array[], int low, int high){
+        System.out.println("Sorting the stack...");
+        sorting(array, low, high);
+        System.out.println("Stack sorted!");
+        printArray(array);
+    }
+    
+    // Sorting the array.
+    public void sorting(int array[], int low, int high){
+        if (low < high){ 
+            int pi = partition(array, low, high);
+            sorting(array, low, pi-1); 
+            sorting(array, pi+1, high); 
         } 
     }
     
-    int partition(int arr[], int low, int high) 
-    { 
-        int pivot = arr[high];  
-        int i = (low-1); // index of smaller element 
-        for (int j=low; j<high; j++) 
-        { 
-            // If current element is smaller than the pivot 
-            if (arr[j] < pivot) 
-            { 
-                i++; 
-  
-                // swap arr[i] and arr[j] 
-                int temp = arr[i]; 
-                arr[i] = arr[j]; 
-                arr[j] = temp; 
+    // Estimates the pivot.
+    int partition(int array[], int low, int high){ 
+        int pivot = array[high];  
+        int i = (low-1);
+        for (int j=low; j<high; j++){ 
+            if (array[j] < pivot){ 
+                i++;
+                int temp = array[i]; 
+                array[i] = array[j]; 
+                array[j] = temp; 
             } 
         } 
-  
-        // swap arr[i+1] and arr[high] (or pivot) 
-        int temp = arr[i+1]; 
-        arr[i+1] = arr[high]; 
-        arr[high] = temp; 
-  
+        int temp = array[i+1]; 
+        array[i+1] = array[high]; 
+        array[high] = temp; 
         return i+1; 
+    } 
+    
+    // Prints the array.
+    public void printArray(int array[]){ 
+        int n = array.length; 
+        for (int i=0; i<n; ++i){
+            System.out.print(array[i]+" ");
+        }     
+        System.out.println(); 
+    } 
+    
+    // Sorts the list.
+    public void sort(LinkedList<Integer> list, int low, int high){
+        System.out.println("Sorting the list...");
+        sorting(list, low, high);
+        System.out.println("List sorted!");
+        printList(list);
+    }
+    
+    // Sorting the list.
+    public void sorting(LinkedList<Integer> list, int low, int high){
+        if (low < high){ 
+            int pi = partition(list, low, high);
+            sorting(list, low, pi-1); 
+            sorting(list, pi+1, high); 
+        } 
+    }
+    
+    // Estimates the pivot.
+    int partition(LinkedList<Integer> list, int low, int high){ 
+        int pivot = list.get(high);  
+        int i = (low-1);
+        for (int j=low; j<high; j++){ 
+            if (list.get(high) < pivot){ 
+                i++;
+                int temp = list.get(i); 
+                list.set(i, list.get(j)); 
+                list.set(j, temp); 
+            } 
+        } 
+        int temp = list.get(i+1); 
+        list.set(i+1, list.get(high)); 
+        list.set(high,temp); 
+        return i+1; 
+    } 
+    
+    // Prints the list.
+    public void printList(LinkedList<Integer> list){ 
+        int n = list.size(); 
+        for (int i=0; i<n; ++i){
+            System.out.print(list.get(i)+" ");
+        }     
+        System.out.println(); 
+    } 
+    
+    // Sorts the stack.
+    public void sort(Stack<Integer> stack, int low, int high){
+        System.out.println("Sorting the stack...");
+        sorting(stack, low, high);
+        System.out.println("Stack sorted!");
+        printStack(stack);
+    }
+    
+    // Sorting the stack.
+    public void sorting(Stack<Integer> stack, int low, int high){
+        if (low < high){ 
+            int pi = partition(stack, low, high);
+            sorting(stack, low, pi-1); 
+            sorting(stack, pi+1, high); 
+        } 
+    }
+    
+    // Estimates the pivot.
+    int partition(Stack<Integer> stack, int low, int high){ 
+        int pivot = stack.get(high);  
+        int i = (low-1);
+        for (int j=low; j<high; j++){ 
+            if (stack.get(high) < pivot){ 
+                i++;
+                int temp = stack.get(i); 
+                stack.set(i, stack.get(j)); 
+                stack.set(j, temp); 
+            } 
+        } 
+        int temp = stack.get(i+1); 
+        stack.set(i+1, stack.get(high)); 
+        stack.set(high,temp); 
+        return i+1; 
+    } 
+    
+    // Prints the stack.
+    public void printStack(Stack<Integer> stack){ 
+        int n = stack.size(); 
+        for (int i=0; i<n; ++i){
+            System.out.print(stack.get(i)+" ");
+        }     
+        System.out.println(); 
     } 
 }
