@@ -38,7 +38,7 @@ public class SelectionSort {
         }
         
         System.out.println("Array sorted!");
-        printArray(array);
+        //printArray(array);
     }
     
     // Prints the array 
@@ -69,7 +69,7 @@ public class SelectionSort {
         }
         
         System.out.println("List sorted!");
-        printList(list);
+        //printList(list);
     }
     
     // Prints the list
@@ -100,13 +100,13 @@ public class SelectionSort {
         }
         
         System.out.println("Stack sorted!");
-        printStack(stack);
+        //printStack(stack);
     }
     
     // Prints the stack
     void printStack(Stack<Integer> stack){ 
         int n = stack.size();
-        for (int i=0; i<n; ++i){
+        for (int i=0; i<n; i++){
             System.out.print(stack.get(i)+" ");
         } 
         System.out.println(); 

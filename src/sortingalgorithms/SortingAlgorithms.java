@@ -5,6 +5,7 @@
  */
 package sortingalgorithms;
 import algorithms.BubbleSort;
+import algorithms.MergeSort;
 import algorithms.SelectionSort;
 import generator.Generator;
 import generator.Structures;
@@ -68,6 +69,8 @@ public class SortingAlgorithms {
                 System.out.print("How many elements: ");
                 number = scanner.nextInt();
                 
+                MergeSort mergesort = new MergeSort();
+                mergesort.sort(structures.fillArray(number), 0, number-1);
             break;
             case 4:
                 System.out.println("Quick sort selected... ");

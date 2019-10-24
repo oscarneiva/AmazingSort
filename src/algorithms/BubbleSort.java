@@ -92,7 +92,7 @@ public class BubbleSort {
     void printList(Stack<Integer> stack){ 
         System.out.println("Printing the stack... ");
         int n = stack.size();
-        for (int i=0; i<n; ++i) 
+        for (int i=0; i<n; i++) 
             System.out.print(stack.get(i) + " "); 
         System.out.println(); 
     } 
