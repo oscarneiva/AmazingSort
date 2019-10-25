@@ -18,6 +18,7 @@ public class SelectionSort {
     // Sorts the array
     public void sort(int array[]){
         System.out.println("Sorting the array...");
+        double startTime = System.nanoTime();
         int n = array.length; 
   
         for (int i = 0; i < n-1; i++){ 
@@ -33,8 +34,10 @@ public class SelectionSort {
             array[i] = temp; 
         }
         
-        System.out.println("Array sorted!");
-        printArray(array);
+        double endTime = System.nanoTime();
+        double time = (endTime - startTime)/Math.pow(10, 9);
+        System.out.println("Array Sorted! Time: " + time + " seconds.");
+        //printArray(array);
     }
     
     // Prints the array 
@@ -49,6 +52,7 @@ public class SelectionSort {
     // Sorts the list
     public void sort(LinkedList<Integer> list){
         System.out.println("Sorting the list...");
+        double startTime = System.nanoTime();
         int n = list.size(); 
   
         for (int i = 0; i < n-1; i++){ 
@@ -64,8 +68,10 @@ public class SelectionSort {
             list.set(i, temp); 
         }
         
-        System.out.println("List sorted!");
-        printList(list);
+        double endTime = System.nanoTime();
+        double time = (endTime - startTime)/Math.pow(10, 9);
+        System.out.println("List Sorted! Time: " + time + " seconds.");
+        //printList(list);
     }
     
     // Prints the list
@@ -80,6 +86,7 @@ public class SelectionSort {
     // Sorts the stack
     public void sort(Stack<Integer> stack){
         System.out.println("Sorting the stack...");
+        double startTime = System.nanoTime();
         int n = stack.size(); 
   
         for (int i = 0; i < n-1; i++){ 
@@ -95,8 +102,10 @@ public class SelectionSort {
             stack.set(i, temp); 
         }
         
-        System.out.println("Stack sorted!");
-        printStack(stack);
+        double endTime = System.nanoTime();
+        double time = (endTime - startTime)/Math.pow(10, 9);
+        System.out.println("Stack Sorted! Time: " + time + " seconds.");
+        //printStack(stack);
     }
     
     // Prints the stack
