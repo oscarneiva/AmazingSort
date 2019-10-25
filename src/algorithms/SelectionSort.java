@@ -1,17 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class contains the Selection Sort algorithm applied to 
+ * different structures. Polymorphic methods are used to simplify
+ * the process of colling these methods.
  */
-package algorithms;
 
+package algorithms;
 import java.util.LinkedList;
 import java.util.Stack;
 
-/**
- *
- * @author Oscar Neiva
- */
 public class SelectionSort {
     
     // Class constructor
@@ -38,7 +34,7 @@ public class SelectionSort {
         }
         
         System.out.println("Array sorted!");
-        //printArray(array);
+        printArray(array);
     }
     
     // Prints the array 
@@ -69,7 +65,7 @@ public class SelectionSort {
         }
         
         System.out.println("List sorted!");
-        //printList(list);
+        printList(list);
     }
     
     // Prints the list
@@ -100,7 +96,7 @@ public class SelectionSort {
         }
         
         System.out.println("Stack sorted!");
-        //printStack(stack);
+        printStack(stack);
     }
     
     // Prints the stack

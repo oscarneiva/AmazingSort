@@ -1,18 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class is in charge of generating the elements for 
+ * the simulation.
  */
-package generator;
 
+package generator;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
-/**
- *
- * @author oscar neiva
- */
 public class Generator {
     private Random random;
     

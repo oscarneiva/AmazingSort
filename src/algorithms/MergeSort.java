@@ -1,17 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class contains the Merge Sort algorithm applied to 
+ * different structures. Polymorphic methods are used to simplify
+ * the process of colling these methods.
  */
-package algorithms;
 
+package algorithms;
 import java.util.LinkedList;
 import java.util.Stack;
 
-/**
- *
- * @author Oscar Neiva
- */
 public class MergeSort {
     
     // Class constructor

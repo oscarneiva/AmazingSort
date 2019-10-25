@@ -1,14 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class contains the Insertion Sort algorithm applied to 
+ * different structures. Polymorphic methods are used to simplify
+ * the process of colling these methods.
  */
-package algorithms;
 
-/**
- *
- * @author Oscar Neiva
- */
+package algorithms;
+import java.util.LinkedList;
+import java.util.Stack;
+
 public class InsertionSort {
     
     // Class constructor.
@@ -16,21 +15,81 @@ public class InsertionSort {
     
     }
     
-    void sort(int arr[]) 
-    { 
-        int n = arr.length; 
-        for (int i = 1; i < n; ++i) { 
-            int key = arr[i]; 
+    // Sorts the array
+    public void sort(int array[]){ 
+        System.out.println("Sorting the array...");
+        int n = array.length; 
+        for (int i = 0; i < n; i++) { 
+            int key = array[i]; 
             int j = i - 1; 
-  
-            /* Move elements of arr[0..i-1], that are 
-               greater than key, to one position ahead 
-               of their current position */
-            while (j >= 0 && arr[j] > key) { 
-                arr[j + 1] = arr[j]; 
+            while (j >= 0 && array[j] > key) { 
+                array[j + 1] = array[j]; 
                 j = j - 1; 
             } 
-            arr[j + 1] = key; 
+            array[j + 1] = key; 
         } 
+        System.out.println("Array sorted!");
+        printArray(array);
     } 
+  
+    // Prints the array
+    public void printArray(int array[]){ 
+        int n = array.length;
+        for (int i = 0; i < n; i++){
+            System.out.print(array[i] + " ");
+        }
+        System.out.println(); 
+    }
+    
+    // Sorts the list
+    public void sort(LinkedList<Integer> list){ 
+        System.out.println("Sorting the list...");
+        int n = list.size();
+        for (int i = 0; i < n; i++) { 
+            int key = list.get(i); 
+            int j = i - 1; 
+            while (j >= 0 && list.get(j) > key) { 
+                list.set(j+1, list.get(j)); 
+                j = j - 1; 
+            } 
+            list.set(j+1, key); 
+        } 
+        System.out.println("List sorted!");
+        printList(list);
+    } 
+  
+    // Prints the list
+    public void printList(LinkedList<Integer> list){ 
+        int n = list.size();
+        for (int i = 0; i < n; i++){
+            System.out.print(list.get(i) + " ");
+        }
+        System.out.println(); 
+    }
+    
+    // Sorts the stack
+    public void sort(Stack<Integer> stack){ 
+        System.out.println("Sorting the stack...");
+        int n = stack.size();
+        for (int i = 0; i < n; i++) { 
+            int key = stack.get(i); 
+            int j = i - 1; 
+            while (j >= 0 && stack.get(j) > key) { 
+                stack.set(j+1, stack.get(j)); 
+                j = j - 1; 
+            } 
+            stack.set(j+1, key); 
+        } 
+        System.out.println("Stack sorted!");
+        printStack(stack);
+    } 
+  
+    // Prints the stack
+    public void printStack(Stack<Integer> stack){ 
+        int n = stack.size();
+        for (int i = 0; i < n; i++){
+            System.out.print(stack.get(i) + " ");
+        }
+        System.out.println(); 
+    }
 }

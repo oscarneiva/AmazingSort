@@ -1,10 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Amazing sort is a java program to test different sorting algorithms
+ * with different sets of data. These sets differ on amount of elements 
+ * and on the generated element, for each time that the generator is executed
+ * new and different sets of numbers are created.
  */
+
 package sortingalgorithms;
 import algorithms.BubbleSort;
+import algorithms.InsertionSort;
 import algorithms.MergeSort;
 import algorithms.QuickSort;
 import algorithms.SelectionSort;
@@ -13,14 +16,9 @@ import generator.Structures;
 import java.io.IOException;
 import java.util.Scanner;
 
-/**
- *
- * @author Oscar Neiva
- */
 public class SortingAlgorithms {
-    /**
-     * @param args the command line arguments
-     */
+    
+    // Main loop with the algorithms options
     public static void main(String[] args) throws IOException, InterruptedException {
         Structures structures = new Structures();
         Scanner scanner = new Scanner(System.in);
@@ -34,14 +32,14 @@ public class SortingAlgorithms {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             
             System.out.println("|----------------------------------------------|");
-            System.out.println("|                Amazing sort!                 |");
+            System.out.println("|                Amazing sort                  |");
             System.out.println("|----------------------------------------------|");
             System.out.println("| 0 - To generate random numbers.              |");
             System.out.println("| 1 - To sort the numbers using bubble sort.   |");
             System.out.println("| 2 - To sort the numbers using selection sort.|");
-            System.out.println("| 3 - To sort the numbers using merge sort.    |");
-            System.out.println("| 4 - To sort the numbers using quick sort.    |");
-            System.out.println("| 5 - To sort the numbers using insertion sort.|");
+            System.out.println("| 3 - To sort the numbers using insertion sort.|");
+            System.out.println("| 4 - To sort the numbers using merge sort.    |");
+            System.out.println("| 5 - To sort the numbers using quick sort.    |");
             System.out.println("|----------------------------------------------|");
             System.out.print("Option: "); 
             option = scanner.nextInt();
@@ -73,6 +71,16 @@ public class SortingAlgorithms {
                     selectionsort.sort(structures.fillStack(number));
                 break;
                 case 3:
+                    System.out.println("Insertion sort selected... ");
+                    System.out.print("How many elements: ");
+                    number = scanner.nextInt();
+                    
+                    InsertionSort insertionsort = new InsertionSort();
+                    insertionsort.sort(structures.fillArray(number));
+                    insertionsort.sort(structures.fillList(number));
+                    insertionsort.sort(structures.fillStack(number));
+                break;
+                case 4:
                     System.out.println("Merge sort selected... ");
                     System.out.print("How many elements: ");
                     number = scanner.nextInt();
@@ -82,7 +90,7 @@ public class SortingAlgorithms {
                     mergesort.sort(structures.fillList(number), 0, number-1);
                     mergesort.sort(structures.fillStack(number), 0, number-1);
                 break;
-                case 4:
+                case 5:
                     System.out.println("Quick sort selected... ");
                     System.out.print("How many elements: ");
                     number = scanner.nextInt();
@@ -91,20 +99,13 @@ public class SortingAlgorithms {
                     quicksort.sort(structures.fillArray(number), 0, number-1);
                     quicksort.sort(structures.fillList(number), 0, number-1);
                     quicksort.sort(structures.fillStack(number), 0, number-1);
-
-                break;
-                case 5:
-                    System.out.println("Insertion sort selected... ");
-                    System.out.print("How many elements: ");
-                    number = scanner.nextInt();
-
                 break;  
                 case 6:
                     System.out.println("Exiting the program... ");
-
                 break;
                 default:
                     System.out.println("ERROR: Invalid option!");
+                break;
             }
         }
     }

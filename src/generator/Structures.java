@@ -1,8 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class contains the data strutures that can be used on the 
+ * simulations.
  */
+
 package generator;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,10 +11,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-/**
- *
- * @author Oscar Neiva
- */
 public class Structures {
     private int[] array;
     private LinkedList<Integer> linkedlist;

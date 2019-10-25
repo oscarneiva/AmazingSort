@@ -1,17 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class contains the Bubble Sort algorithm applied to 
+ * different structures. Polymorphic methods are used to simplify
+ * the process of colling these methods.
  */
-package algorithms;
 
+package algorithms;
 import java.util.LinkedList;
 import java.util.Stack;
 
-/**
- *
- * @author oscar neiva
- */
 public class BubbleSort {
     
     // Class constructor
@@ -33,7 +29,7 @@ public class BubbleSort {
             }      
         }
         System.out.println("Array Sorted!");
-        //printArray(array);
+        printArray(array);
     }
     
     // Prints the array
@@ -59,7 +55,7 @@ public class BubbleSort {
             }      
         }
         System.out.println("List Sorted!");
-        //printList(list);
+        printList(list);
     }
     
     // Prints the list
@@ -85,7 +81,7 @@ public class BubbleSort {
             }      
         }
         System.out.println("Stack Sorted!");
-        //printList(stack);
+        printList(stack);
     }
     
     // Prints the stack
