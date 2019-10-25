@@ -5,7 +5,7 @@
  * new and a different set of numbers is created.
  */
 
-package sortingalgorithms;
+package amazingsort;
 import algorithms.BubbleSort;
 import algorithms.InsertionSort;
 import algorithms.MergeSort;
@@ -16,7 +16,7 @@ import generator.Structures;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class SortingAlgorithms {
+public class AmazingSort {
     
     // Main loop with the algorithms options
     public static void main(String[] args) throws IOException, InterruptedException {
@@ -27,19 +27,20 @@ public class SortingAlgorithms {
         
         while(option != 6){
             System.out.println();
-            System.out.println("Press enter to clean and start:");
+            System.out.println("Press enter to clean the window and start:");
             System.in.read();
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             
             System.out.println("|----------------------------------------------|");
             System.out.println("|                Amazing sort                  |");
             System.out.println("|----------------------------------------------|");
-            System.out.println("| 0 - To generate random numbers.              |");
+            System.out.println("| 0 - To generate a new set of random numbers. |");
             System.out.println("| 1 - To sort the numbers using bubble sort.   |");
             System.out.println("| 2 - To sort the numbers using selection sort.|");
             System.out.println("| 3 - To sort the numbers using insertion sort.|");
             System.out.println("| 4 - To sort the numbers using merge sort.    |");
             System.out.println("| 5 - To sort the numbers using quick sort.    |");
+            System.out.println("| 6 - To exit the program.                     |");
             System.out.println("|----------------------------------------------|");
             System.out.print("Option: "); 
             option = scanner.nextInt();
@@ -47,8 +48,12 @@ public class SortingAlgorithms {
             switch(option){
                 case 0:
                     System.out.println("Starting numbers generator... ");
+                    System.out.println("Attention! This will delete all the previous generated elements.");
+                    System.out.print("How many elements: ");
+                    number = scanner.nextInt();
+                    
                     Generator generator = new Generator();
-                    generator.generateNumbers();
+                    generator.generateNumbers(number);
                 break;
                 case 1:
                     System.out.println("Bubble sort selected... ");
