@@ -18,9 +18,12 @@ public class MergeSort {
     // Sorts the array
     public void sort(int array[], int l, int r){
         System.out.println("Sorting the array...");
+        double startTime   = System.nanoTime();
         sorting(array, l, r);
-        System.out.println("Array sorted!");
-        printArray(array);
+        double endTime = System.nanoTime();
+        double time = (endTime - startTime)/Math.pow(10, 9);
+        System.out.println("Array Sorted! Time: " + time + " seconds.");
+        //printArray(array);
     }
     
     // Sorting the array
@@ -88,9 +91,12 @@ public class MergeSort {
     // Sorts the list
     public void sort(LinkedList<Integer> list, int l, int r){
         System.out.println("Sorting the list...");
+        double startTime   = System.nanoTime();
         sorting(list, l, r);
-        System.out.println("List sorted!");
-        printList(list);
+        double endTime = System.nanoTime();
+        double time = (endTime - startTime)/Math.pow(10, 9);
+        System.out.println("List Sorted! Time: " + time + " seconds.");
+        //printList(list);
     }
     
     // Sorting the list
@@ -158,9 +164,12 @@ public class MergeSort {
     // Sorts the stack
     public void sort(Stack<Integer> stack, int l, int r){
         System.out.println("Sorting the stack...");
+        double startTime = System.nanoTime();
         sorting(stack, l, r);
-        System.out.println("Stack sorted!");
-        printStack(stack);
+        double endTime = System.nanoTime();
+        double time = (endTime - startTime)/Math.pow(10, 9);
+        System.out.println("Stack Sorted! Time: " + time + " seconds.");
+        //printStack(stack);
     }
     
     // Sorting the stack
