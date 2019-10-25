@@ -17,9 +17,9 @@ public class QuickSort {
     
     // Sorts the array.
     public void sort(int array[], int low, int high){
-        System.out.println("Sorting the stack...");
+        System.out.println("Sorting the array...");
         sorting(array, low, high);
-        System.out.println("Stack sorted!");
+        System.out.println("Array sorted!");
         printArray(array);
     }
     
@@ -81,7 +81,7 @@ public class QuickSort {
         int pivot = list.get(high);  
         int i = (low-1);
         for (int j=low; j<high; j++){ 
-            if (list.get(high) < pivot){ 
+            if (list.get(j) < pivot){ 
                 i++;
                 int temp = list.get(i); 
                 list.set(i, list.get(j)); 
@@ -90,9 +90,9 @@ public class QuickSort {
         } 
         int temp = list.get(i+1); 
         list.set(i+1, list.get(high)); 
-        list.set(high,temp); 
+        list.set(high, temp); 
         return i+1; 
-    } 
+    }
     
     // Prints the list.
     public void printList(LinkedList<Integer> list){ 
@@ -125,7 +125,7 @@ public class QuickSort {
         int pivot = stack.get(high);  
         int i = (low-1);
         for (int j=low; j<high; j++){ 
-            if (stack.get(high) < pivot){ 
+            if (stack.get(j) < pivot){ 
                 i++;
                 int temp = stack.get(i); 
                 stack.set(i, stack.get(j)); 

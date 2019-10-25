@@ -2,7 +2,7 @@
  * Amazing sort is a java program to test different sorting algorithms
  * with different sets of data. These sets differ on amount of elements 
  * and on the generated element, for each time that the generator is executed
- * new and different sets of numbers are created.
+ * new and a different set of numbers is created.
  */
 
 package sortingalgorithms;
@@ -109,5 +109,4 @@ public class SortingAlgorithms {
             }
         }
     }
-    
 }
