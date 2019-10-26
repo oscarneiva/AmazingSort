@@ -14,6 +14,8 @@ public class Generator {
     
     // Generate random numbers and write them on the text file.
     public void generateNumbers(int number) throws IOException{
+        double startTime = System.nanoTime();
+        
         deleteContent();
         
         random = new Random();
@@ -24,6 +26,10 @@ public class Generator {
             fileWriter.close();
             System.out.println(i);
         }
+        
+        double endTime = System.nanoTime();
+        double time = (endTime - startTime)/Math.pow(10, 9);
+        System.out.println("Data generated! Time: " + time + " seconds.");
     }
     
     // Delete the data from the csv file.
