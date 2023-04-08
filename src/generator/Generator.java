@@ -21,7 +21,7 @@ public class Generator {
         random = new Random();
         for(int i=0; i<number; i++){
             String fileContent = String.valueOf(random.nextInt(number)) + ",";
-            FileWriter fileWriter = new FileWriter("./data/data.csv", true);
+            FileWriter fileWriter = new FileWriter("data/data.csv", true);
             fileWriter.write(fileContent);
             fileWriter.close();
             System.out.println(i);
@@ -34,7 +34,7 @@ public class Generator {
     
     // Delete the data from the csv file.
     public void deleteContent()throws IOException{
-        PrintWriter writer = new PrintWriter("./data/data.csv");
+        PrintWriter writer = new PrintWriter("data/data.csv");
         writer.print("");
         writer.close();
     }

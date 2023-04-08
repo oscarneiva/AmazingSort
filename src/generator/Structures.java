@@ -26,7 +26,7 @@ public class Structures {
     // Read the data from the text file.
     public void readTextFile() throws IOException{
         System.out.println("Starting text file reading...");
-        FileReader fileReader = new FileReader("./data/data.csv");
+        FileReader fileReader = new FileReader("data/data.csv");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         
         String fileContent;

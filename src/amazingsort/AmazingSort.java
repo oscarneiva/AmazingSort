@@ -29,8 +29,17 @@ public class AmazingSort {
             System.out.println();
             System.out.println("Press enter to clean the window and start:");
             System.in.read();
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            
+
+            String osName = System.getProperty("os.name").toLowerCase();
+            if (osName.contains("windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else if (osName.contains("mac")) {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            } else {
+                System.out.println("ERROR: This program cannot run in this operating system.");
+            }
+
             System.out.println("|----------------------------------------------|");
             System.out.println("|                Amazing sort                  |");
             System.out.println("|----------------------------------------------|");
