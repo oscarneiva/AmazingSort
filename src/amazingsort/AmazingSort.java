@@ -95,7 +95,7 @@ public class AmazingSort {
                     //insertionsort.sort(structures.fillStack(number));
                 break;
                 case 4:
-                    System.out.println("Merge sort selected... ");git a
+                    System.out.println("Merge sort selected... ");
                     System.out.print("How many elements: ");
                     number = scanner.nextInt();
 
