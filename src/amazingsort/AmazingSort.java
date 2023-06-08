@@ -6,11 +6,7 @@
  */
 
 package amazingsort;
-import algorithms.BubbleSort;
-import algorithms.InsertionSort;
-import algorithms.MergeSort;
-import algorithms.QuickSort;
-import algorithms.SelectionSort;
+import algorithms.*;
 import generator.Generator;
 import generator.Structures;
 import java.io.IOException;
@@ -72,7 +68,7 @@ public class AmazingSort {
                     BubbleSort bubblesort = new BubbleSort();
                     bubblesort.sort(structures.fillArray(number));
                     bubblesort.sort(structures.fillList(number));
-                    //bubblesort.sort(structures.fillStack(number));
+//                    bubblesort.sort(structures.fillStack(number));
                 break;
                 case 2:
                     System.out.println("Selection sort selected... ");
@@ -82,7 +78,7 @@ public class AmazingSort {
                     SelectionSort selectionsort = new SelectionSort();
                     selectionsort.sort(structures.fillArray(number));
                     selectionsort.sort(structures.fillList(number));
-                    //selectionsort.sort(structures.fillStack(number));
+//                    selectionsort.sort(structures.fillStack(number));
                 break;
                 case 3:
                     System.out.println("Insertion sort selected... ");
@@ -92,7 +88,7 @@ public class AmazingSort {
                     InsertionSort insertionsort = new InsertionSort();
                     insertionsort.sort(structures.fillArray(number));
                     insertionsort.sort(structures.fillList(number));
-                    //insertionsort.sort(structures.fillStack(number));
+//                    insertionsort.sort(structures.fillStack(number));
                 break;
                 case 4:
                     System.out.println("Merge sort selected... ");
@@ -102,7 +98,7 @@ public class AmazingSort {
                     MergeSort mergesort = new MergeSort();
                     mergesort.sort(structures.fillArray(number), 0, number-1);
                     mergesort.sort(structures.fillList(number), 0, number-1);
-                    //mergesort.sort(structures.fillStack(number), 0, number-1);
+//                    mergesort.sort(structures.fillStack(number), 0, number-1);
                 break;
                 case 5:
                     System.out.println("Quick sort selected... ");
@@ -112,9 +108,18 @@ public class AmazingSort {
                     QuickSort quicksort = new QuickSort();
                     quicksort.sort(structures.fillArray(number), 0, number-1);
                     quicksort.sort(structures.fillList(number), 0, number-1);
-                    //quicksort.sort(structures.fillStack(number), 0, number-1);
-                break;  
+//                    quicksort.sort(structures.fillStack(number), 0, number-1);
+                break;
                 case 6:
+                    System.out.println("Radix sort selected... ");
+                    System.out.print("How many elements: ");
+                    number = scanner.nextInt();
+
+                    RadixSort radixSort = new RadixSort();
+                    radixSort.sort(structures.fillArray(number), number-1);
+                    radixSort.sort(structures.fillList(number), number-1);
+                    break;
+                case 7:
                     System.out.println("Exiting the program... ");
                 break;
                 default:
