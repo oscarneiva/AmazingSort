@@ -45,7 +45,8 @@ public class AmazingSort {
             System.out.println("| 3 - To sort the numbers using insertion sort.|");
             System.out.println("| 4 - To sort the numbers using merge sort.    |");
             System.out.println("| 5 - To sort the numbers using quick sort.    |");
-            System.out.println("| 6 - To exit the program.                     |");
+            System.out.println("| 6 - To sort the numbers using radix sort.    |");
+            System.out.println("| 7 - To exit the program.                     |");
             System.out.println("|----------------------------------------------|");
             System.out.print("Option: "); 
             option = scanner.nextInt();
@@ -117,7 +118,7 @@ public class AmazingSort {
 
                     RadixSort radixSort = new RadixSort();
                     radixSort.sort(structures.fillArray(number), number-1);
-                    radixSort.sort(structures.fillList(number), number-1);
+                    //radixSort.sort(structures.fillList(number), number-1);
                     break;
                 case 7:
                     System.out.println("Exiting the program... ");

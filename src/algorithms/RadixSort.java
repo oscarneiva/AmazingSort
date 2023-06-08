@@ -55,9 +55,6 @@ public class RadixSort {
         double endTime = System.nanoTime();
         double time = (endTime - startTime)/Math.pow(10, 9);
         System.out.println("List Sorted! Time: " + time + " seconds.");
-        for (int i = 0; i < n; i++) {
-            System.out.println("bliu" + arr[i]);
-        }
     }
 
     // List get max
