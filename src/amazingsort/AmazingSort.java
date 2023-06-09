@@ -1,10 +1,3 @@
-/*
- * Amazing sort is a java program to test different sorting algorithms
- * with different sets of data. These sets differ on amount of elements 
- * and on the generated element, for each time that the generator is executed
- * new and a different set of numbers is created.
- */
-
 package amazingsort;
 import algorithms.*;
 import generator.Generator;
@@ -117,8 +110,8 @@ public class AmazingSort {
                     number = scanner.nextInt();
 
                     RadixSort radixSort = new RadixSort();
-                    radixSort.sort(structures.fillArray(number), number-1);
-                    //radixSort.sort(structures.fillList(number), number-1);
+                    radixSort.sort(structures.fillArray(number));
+                    radixSort.sort(structures.fillList(number));
                     break;
                 case 7:
                     System.out.println("Exiting the program... ");
