@@ -24,7 +24,7 @@ public class Generator {
             FileWriter fileWriter = new FileWriter("./data/data.csv", true);
             fileWriter.write(fileContent);
             fileWriter.close();
-            System.out.println(i);
+            //System.out.println(i);
         }
         
         double endTime = System.nanoTime();
