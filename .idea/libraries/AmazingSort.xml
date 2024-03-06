@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="AmazingSort">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/dist/AmazingSort.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
