@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class AmazingSort {
-    
+
     // Main loop with the algorithms options
     public static void main(String[] args) throws IOException, InterruptedException {
         Structures structures = new Structures();
@@ -39,10 +39,18 @@ public class AmazingSort {
             System.out.println("| 4 - To sort the numbers using merge sort.    |");
             System.out.println("| 5 - To sort the numbers using quick sort.    |");
             System.out.println("| 6 - To sort the numbers using radix sort.    |");
-            System.out.println("| 7 - To exit the program.                     |");
+            System.out.println("| 7 - To run all sorting algorithms.           |");
+            System.out.println("| 8 - To exit.                                 |");
             System.out.println("|----------------------------------------------|");
             System.out.print("Option: "); 
             option = scanner.nextInt();
+
+            BubbleSort bubbleSort = new BubbleSort();
+            InsertionSort insertionSort = new InsertionSort();
+            MergeSort mergeSort = new MergeSort();
+            QuickSort quickSort = new QuickSort();
+            RadixSort radixSort = new RadixSort();
+            SelectionSort selectionSort = new SelectionSort();
 
             switch(option){
                 case 0:
@@ -53,72 +61,97 @@ public class AmazingSort {
                     
                     Generator generator = new Generator();
                     generator.generateNumbers(number);
-                break;
+                    break;
                 case 1:
                     System.out.println("Bubble sort selected... ");
                     System.out.print("How many elements: ");
                     number = scanner.nextInt();
 
-                    BubbleSort bubblesort = new BubbleSort();
-                    bubblesort.sort(structures.fillArray(number));
-                    bubblesort.sort(structures.fillList(number));
-//                    bubblesort.sort(structures.fillStack(number));
-                break;
+                    bubbleSort.sort(structures.fillArray(number));
+                    bubbleSort.sort(structures.fillList(number));
+                    break;
                 case 2:
                     System.out.println("Selection sort selected... ");
                     System.out.print("How many elements: ");
                     number = scanner.nextInt();
 
-                    SelectionSort selectionsort = new SelectionSort();
-                    selectionsort.sort(structures.fillArray(number));
-                    selectionsort.sort(structures.fillList(number));
-//                    selectionsort.sort(structures.fillStack(number));
-                break;
+                    selectionSort.sort(structures.fillArray(number));
+                    selectionSort.sort(structures.fillList(number));
+                    break;
                 case 3:
                     System.out.println("Insertion sort selected... ");
                     System.out.print("How many elements: ");
                     number = scanner.nextInt();
-                    
-                    InsertionSort insertionsort = new InsertionSort();
-                    insertionsort.sort(structures.fillArray(number));
-                    insertionsort.sort(structures.fillList(number));
-//                    insertionsort.sort(structures.fillStack(number));
-                break;
+
+                    insertionSort.sort(structures.fillArray(number));
+                    insertionSort.sort(structures.fillList(number));
+                    break;
                 case 4:
                     System.out.println("Merge sort selected... ");
                     System.out.print("How many elements: ");
                     number = scanner.nextInt();
 
-                    MergeSort mergesort = new MergeSort();
-                    mergesort.sort(structures.fillArray(number), 0, number-1);
-                    mergesort.sort(structures.fillList(number), 0, number-1);
-//                    mergesort.sort(structures.fillStack(number), 0, number-1);
-                break;
+                    mergeSort.sort(structures.fillArray(number), 0, number-1);
+                    mergeSort.sort(structures.fillList(number), 0, number-1);
+                    break;
                 case 5:
                     System.out.println("Quick sort selected... ");
                     System.out.print("How many elements: ");
                     number = scanner.nextInt();
-                    
-                    QuickSort quicksort = new QuickSort();
-                    quicksort.sort(structures.fillArray(number), 0, number-1);
-                    quicksort.sort(structures.fillList(number), 0, number-1);
-//                    quicksort.sort(structures.fillStack(number), 0, number-1);
-                break;
+
+                    quickSort.sort(structures.fillArray(number), 0, number-1);
+                    quickSort.sort(structures.fillList(number), 0, number-1);
+                    break;
                 case 6:
                     System.out.println("Radix sort selected... ");
                     System.out.print("How many elements: ");
                     number = scanner.nextInt();
 
-                    RadixSort radixSort = new RadixSort();
                     radixSort.sort(structures.fillArray(number));
                     radixSort.sort(structures.fillList(number));
                     break;
                 case 7:
+                    System.out.println("All sorting algorithms selected... ");
+                    System.out.print("How many elements: ");
+                    number = scanner.nextInt();
+
+                    System.out.println("Bubble sort started...");
+                    bubbleSort.sort(structures.fillArray(number));
+                    bubbleSort.sort(structures.fillList(number));
+                    System.out.println("Bubble sort end\n");
+
+                    System.out.println("Selection sort started...");
+                    selectionSort.sort(structures.fillArray(number));
+                    selectionSort.sort(structures.fillList(number));
+                    System.out.println("Selection sort end\n");
+
+                    System.out.println("Insertion sort started...");
+                    insertionSort.sort(structures.fillArray(number));
+                    insertionSort.sort(structures.fillList(number));
+                    System.out.println("Insertion sort end\n");
+
+                    System.out.println("Merge sort started...");
+                    mergeSort.sort(structures.fillArray(number), 0, number-1);
+                    mergeSort.sort(structures.fillList(number), 0, number-1);
+                    System.out.println("Merge sort end\n");
+
+                    System.out.println("Quick sort started...");
+                    quickSort.sort(structures.fillArray(number), 0, number-1);
+                    quickSort.sort(structures.fillList(number), 0, number-1);
+                    System.out.println("Quick sort end\n");
+
+                    System.out.println("Radix sort started...");
+                    radixSort.sort(structures.fillArray(number));
+                    radixSort.sort(structures.fillList(number));
+                    System.out.println("Radix sort end\n");
+
+                    break;
+                case 8:
                     System.out.println("Exiting the program... ");
-                break;
+                    break;
                 default:
                     System.out.println("ERROR: Invalid option!");
-                break;
+                    break;
             }
         }
     }
